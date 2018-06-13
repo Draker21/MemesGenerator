@@ -3,8 +3,7 @@ require_once ROOT . '/vendor/autoload.php';
 
 class Controller {
     protected $route;
-    public $loader;
-    public $twig;
+    public $loader; public $twig;
 
     public function __construct($route){
         $this->route = $route;

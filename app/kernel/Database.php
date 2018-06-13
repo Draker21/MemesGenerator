@@ -1,8 +1,11 @@
 <?php
+
 require_once ROOT . '/app/config.php';
 
 class Database  {
+    
     private static $db = null;
+    
     /**
      * Créer une connexion à la base de données.
      * @return un objet PDO

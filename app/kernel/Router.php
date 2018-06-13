@@ -2,7 +2,7 @@
 
 class Router {
 
-    public static function analyse($request){ // Route vers la page 404
+    public static function analyse($request){
         $result = array(
             'controller'    => 'Error',
             'action'        => 'error404',
@@ -29,4 +29,5 @@ class Router {
 
         return $result;
     }
+    
 }
