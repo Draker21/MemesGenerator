@@ -19,7 +19,7 @@ class Kernel {
         spl_autoload_register(array('Kernel', 'autoload'));
 
         // Analyser la requête
-        $request = isset($_GET['request']) ? $_GET['request'] : '';
+        $request = isset($_GET['request']) ? $_GET['request'] : ''; //?request dans htaccess
         $route = Router::analyse($request);
 
         // Instancier le contrôleur et executer l'action
