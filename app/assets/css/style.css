@@ -56,6 +56,8 @@
 .absolute {position: absolute;}
 .relative {position: relative;}
 
+.floatRight{float: right !important;}
+
 .top0prc {top: 0%;}
 .top5prc {top: 5%;}
 .top20prc {top: 20%;}
@@ -122,3 +124,14 @@
 .br10px {border-radius: 10px;}
 .borderLeft{border-left: 5px solid white}
 .bordure {border: 1px solid rgb(255, 255, 255);}
+
+/*---------------->> CLASSES SPECIFIQUES <<----------------*/
+
+.sidenav li>a {color: white;}
+
+/*---------------->> RESPONSIVE <<----------------*/
+
+@media all and (max-device-width: 640px) {
+.mobile  {  text-align: center !important;}
+nav .brand-logo { font-size: 20px;}
+}
