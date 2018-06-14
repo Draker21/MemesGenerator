@@ -1,6 +1,0 @@
-SELECT mem_pseudo, mem_image, mem_createdAt FROM `meme` ORDER BY mem_createdAt ASC LIMIT 5;
-
-SELECT * FROM `meme` ORDER BY mem_createdAt ASC;
-
-INSERT INTO `meme` (mem_id,mem_pseudo,mem_image,mem_createdAt) VALUES ("",$_POST['idInputPseudo'], ,<?php NOW() ?>
-
