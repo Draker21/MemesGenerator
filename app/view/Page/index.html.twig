@@ -5,25 +5,43 @@
 {% endblock %}
 
 {% block content %}
-<section class="container">
 
-    {% for memes in meme %}
-        <div><p>Id : {{ memes.mem_id }}</p>
-        <p>Pseudo : {{ memes.mem_pseudo }} </p>
-        <p>Img : {{ memes.mem_image }}</p>
-        <p>Crée le : {{ memes.mem_createdAt }}</p>
+
+    <div class="h10vh"></div>
+
+<section class="container row h70vh">
+    <div class="col m1 s1"></div>
+    <div class="col m4 s10 h30vh  bgWhite"></div>
+
+    <form>
+        <p>Pseudo <br> </p>    <input type="text" name="pseudo">
+        <p>Ajouter du texte sur l'image <br> </p>    <input type="text" name="pseudo">
+        <p>Selectionner une police d'écriture <br> </p>      <input list="browsers" name="browser">
+        <datalist id="browsers">
+          <option value="Times new roman">
+          <option value="Myriad">
+          <option value="Roboto">
+        </datalist>
+    </form>
+
+
+
+{#     {% for memes in meme %}
+        <div class="">
+            <p>Id : {{ memes.mem_id }}</p>
+            <p>Pseudo : {{ memes.mem_pseudo }} </p>
+            <p>Img : {{ memes.mem_image }}</p>
+            <p>Crée le : {{ memes.mem_createdAt }}</p>
         </div>
-    {% endfor %}
+    {% endfor %} #}
 
-    <div class="row column">
-        <div class="offset-m1 offset-s1 col s10 m4 h33prc bgWhite">
-        </div>
 
-        <div class="offset-m1 offset-s1 col s10 m4">
+      {#   <div class="offset-m1 offset-s1 col s10 m4">
             <div><button>Parcourir </button></div>
             <div><button>Supprimer</button></div>
             <div><button>Generer</button></div>
-        </div>
+        </div> #}
+
     </div>
 </section>
 {% endblock %}

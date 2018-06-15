@@ -22,7 +22,6 @@
 .bgWhite {background-color: rgb(255, 255, 255);}
 .bgGrey {background-color: rgb(200, 200, 200);}
 .bgBlack {background-color: rgb(50, 50, 50);}
-.bggrey{background-color: grey;}
 
 
 /* FONT */
@@ -36,7 +35,9 @@
 .lh2p5em {line-height: 2.5em;}
 .lh2em {line-height: 2em;}
 .lh1p5em {line-height: 1.5em;}
-.lh20 {line-height: 20px;}
+.lh8vh {line-height: 8vh;}
+.lh10vh {line-height: 10vh;}
+.lh20px {line-height: 20px;}
 .lh90px {line-height: 90px;}
 .lh100px {line-height: 100px;}
 .lh120px {line-height: 120px;}
@@ -52,7 +53,9 @@
 .fs35px {font-size: 35px;}
 .fs30px {font-size: 30px;}
 .fs20px {font-size: 20px;}
+
 .txtcenter {text-align: center;}
+.txtright {text-align: right;}
 .bold {font-weight: bold;}
 .italic {font-style: italic;}
 .semibold {font-weight: 600;}
@@ -120,6 +123,8 @@
 
 
 .h33prc{height: 33%;}
+
+.h400px{height: 400px}
 .h100px{height: 100px}
 .h100vh{height: 100vh}
 .h0p4em {height: 0.4em;}
@@ -127,10 +132,12 @@
 .h0p1em {height: 0.1em;}
 .h120px {height: 120px;}
 .h90px {height: 90px;}
+.h8px {height: 8px;}
 .h10px {height: 10px;}
 .h10vh{height: 10vh;}
 .h20vh{height: 20vh;}
 .h30vh{height: 30vh;}
+.h33vh{height: 33vh;}
 .h40vh{height: 40vh;}
 .h50vh{height: 50vh;}
 .h60vh{height: 60vh;}
@@ -147,6 +154,8 @@
 /*---------------->> CLASSES SPECIFIQUES <<----------------*/
 
 .sidenav li>a {color: white;}
+
+.row {margin-bottom:0px !important;}
 
 /*---------------->> RESPONSIVE <<----------------*/
 
