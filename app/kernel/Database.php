@@ -20,7 +20,7 @@ class Database  {
                 echo 'Echec de la connexion : ' . $e->getMessage();
             }
         }
-        return self :: $db;            
+        return $db;            
     }
 }
 

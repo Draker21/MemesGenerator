@@ -4,8 +4,8 @@ Class Meme extends Model{
 
     public static function displayLastGeneratedMeme() {
         $db = Database::getInstance();
-        $sql = 'SELECT mem_pseudo, mem_image, mem_createdAt FROM `meme` ORDER BY mem_createdAt ASC LIMIT 5';
-        $stmt = $db->prepare($sql);
+/*         $sql = 'SELECT mem_pseudo, mem_image, mem_createdAt FROM `meme` ORDER BY mem_createdAt ASC LIMIT 5'; */
+        $stmt = $db->prepare('SELECT mem_pseudo, mem_image, mem_createdAt FROM `meme` ORDER BY mem_createdAt ASC LIMIT 5');
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
         return $stmt->fetchAll();

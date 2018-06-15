@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+<section class="container">
+
     {% for memes in meme %}
         <div><p>Id : {{ memes.mem_id }}</p>
         <p>Pseudo : {{ memes.mem_pseudo }} </p>
@@ -12,4 +14,16 @@
         <p>Crée le : {{ memes.mem_createdAt }}</p>
         </div>
     {% endfor %}
+
+    <div class="row column">
+        <div class="offset-m1 offset-s1 col s10 m4 h33prc bgWhite">
+        </div>
+
+        <div class="offset-m1 offset-s1 col s10 m4">
+            <div><button>Parcourir </button></div>
+            <div><button>Supprimer</button></div>
+            <div><button>Generer</button></div>
+        </div>
+    </div>
+</section>
 {% endblock %}
