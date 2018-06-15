@@ -1,12 +1,13 @@
 <?php
 
 class PageController extends Controller {
-/* $recentMeme = Meme::displayLastGeneratedMeme(); */
     public function index(){
-        
+        $limit = $this->route['params']["limit"];
+        $recentMeme = Meme::displayLastGeneratedMeme($limit);
 
-        
         $template = $this->twig->loadTemplate('/Page/index.html.twig');
-        echo $template->render(array());
+        echo $template->render(array(
+            'meme' => $recentMeme
+        ));
     }
-}
+} 

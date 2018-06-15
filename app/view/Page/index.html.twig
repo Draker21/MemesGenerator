@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block content %}
-
+    {% for memes in meme %}
+        <div><p>Id : {{ memes.mem_id }}</p>
+        <p>Pseudo : {{ memes.mem_pseudo }} </p>
+        <p>Img : {{ memes.mem_image }}</p>
+        <p>Crée le : {{ memes.mem_createdAt }}</p>
+        </div>
+    {% endfor %}
 {% endblock %}

@@ -1,12 +1,14 @@
 <?php
 
-Class Meme{
+Class Meme extends Model{
 
     public static function displayLastGeneratedMeme() {
         $db = Database::getInstance();
-        $sql = 'SELECT mem_pseudo, mem_image, mem_createdAt FROM `meme` ORDER BY mem_createdAt ASC LIMIT 5;';
-        $stmt = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-        return $stmt;
+        $sql = 'SELECT mem_pseudo, mem_image, mem_createdAt FROM `meme` ORDER BY mem_createdAt ASC LIMIT 5';
+        $stmt = $db->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 
     public static function displayGalleryOfMeme() {
