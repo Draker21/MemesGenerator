@@ -11,13 +11,30 @@ class Database  {
      * @return un objet PDO
      */
     public static function getInstance() {
+        $serveur ="localhost";
+        $login = "root";
+        $pass = "";
         if (self :: $db == null){
-            try {
+            try {/*
                 self :: $db = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
                 self :: $db->setAttribute(PDO :: ATTR_CASE, PDO :: CASE_UPPER);
                 self :: $db->setAttribute(PDO :: ATTR_ERRMODE, PDO :: ERRMODE_EXCEPTION);
                 self :: $db->setAttribute(PDO :: ATTR_ORACLE_NULLS, PDO :: NULL_TO_STRING);
-                self :: $db->exec('SET NAMES utf8');         
+                self :: $db->exec('SET NAMES utf8');       */  
+                $db = new PDO("mysql:host=$serveur;dbname=memegenerator",$login, $pass);
+                $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $requete = $connexion->prepare("
+                SELECT * FROM meme
+            ");
+           
+        $requete->execute();
+        $tables = $requete->fetchAll();
+
+                foreach($tables as $tableau){ 
+                    $aff = $tableau[''];
+                    echo $aff;
+                    }
             }
             catch (PDOException $e) {
                 echo 'Echec de la connexion : ' . $e->getMessage();

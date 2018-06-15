@@ -1,12 +1,15 @@
 <?php
 
 class PageController extends Controller {
-/* $recentMeme = Meme::displayLastGeneratedMeme(); */
+
     public function index(){
         
-
+        $recentMeme = Meme::displayLastGeneratedMeme(); 
+        $essaiaffiche = Meme::test();
         
         $template = $this->twig->loadTemplate('/Page/index.html.twig');
-        echo $template->render(array());
+        echo $template->render(array(
+            "affiche" => $essaiaffiche
+        ));
     }
 }

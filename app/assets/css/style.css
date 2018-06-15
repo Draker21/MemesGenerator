@@ -9,6 +9,12 @@
 .centerX{justify-content: center;}
 .centerY{align-items: center;}
 
+.d_flexcenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* COLOR */
 
@@ -16,10 +22,14 @@
 .bgWhite {background-color: rgb(255, 255, 255);}
 .bgGrey {background-color: rgb(200, 200, 200);}
 .bgBlack {background-color: rgb(50, 50, 50);}
-
+.bggrey{background-color: grey;}
 
 
 /* FONT */
+.fs20{font-size: 20px;}
+.fs50{font-size: 50px;}
+.fs100{font-size: 100px;}
+
 
 .cinzel {font-family: 'Cinzel', serif;}
 .oswald {font-family: 'Oswald', sans-serif;}
@@ -117,7 +127,15 @@
 .h120px {height: 120px;}
 .h90px {height: 90px;}
 .h10px {height: 10px;}
-
+.h10vh{height: 10vh;}
+.h20vh{height: 20vh;}
+.h30vh{height: 30vh;}
+.h40vh{height: 40vh;}
+.h50vh{height: 50vh;}
+.h60vh{height: 60vh;}
+.h70vh{height: 70vh;}
+.h80vh{height: 80vh;}
+.h90vh{height: 90vh;}
 
 /* BORDER + SEPARATOR */
 

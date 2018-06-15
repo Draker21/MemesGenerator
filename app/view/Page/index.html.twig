@@ -5,5 +5,24 @@
 {% endblock %}
 
 {% block content %}
+<section class="h80vh d_flexcenter bggrey column">
 
+        <div class="d_flexcenter h20vh w30vh bgWhite">
+                {% for essai in memes    %}
+        {{
+            essai.mem_id 
+        }}
+    {% endfor %}
+            </div>
+
+    <div class="dflex column">
+        <div class="d_flexcenter h20vh w30vh bgWhite">
+        </div>
+        <div style="display:flex; justify-content: space-around;">
+            <div><button>Parcourir </button></div>
+            <div><button>Supprimer</button></div>
+            <div><button>Generer</button></div>
+        </div>
+    </div>
+</section>
 {% endblock %}

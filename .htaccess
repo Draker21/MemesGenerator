@@ -1,6 +1,6 @@
 Options +FollowSymlinks
 RewriteEngine on
-RewriteBase /MemesGenerator
+RewriteBase /php/mvcdefintif/MemesGenerator
 # Vérifie si il s'agit d'un répertoire ou un chemin
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{SCRIPT_FILENAME} !-d
