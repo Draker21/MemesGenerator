@@ -10,40 +10,42 @@
     <div class="h10vh"></div>
 
 <section class="container row h70vh">
-    <div class="col m1 s1"></div>
-    <div class="col m4 s10 h30vh  bgWhite"></div>
-
-    <img name="current_img" class="" id="output_img"/>
-    <form method="POST" action="" enctype="multipart/form-data">
-        
-        <input type="file" name="img" onchange="loadFile(event)">
-        <input type="submit" name="submit" value="Générer">
-        <p>Pseudo</p><input type="text" name="pseudo">
-        <p>Ajouter du texte sur l'image</p> <input type="text" name="pseudo">
-        <p>Selectionner une police d'écriture</p><input list="browsers" name="browser">
-        <datalist id="browsers">
-          <option value="Times new roman">
-          <option value="Myriad">
-          <option value="Roboto">
-        </datalist>
-    </form>
+    <div class="col m4 s10 h30vh bgWhite">
     
-{#     {% for memes in meme %}
-        <div class="">
-            <p>Id : {{ memes.mem_id }}</p>
-            <p>Pseudo : {{ memes.mem_pseudo }} </p>
-            <p>Img : {{ memes.mem_image }}</p>
-            <p>Crée le : {{ memes.mem_createdAt }}</p>
-        </div>
-    {% endfor %} #}
-
-
-      {#   <div class="offset-m1 offset-s1 col s10 m4">
-            <div><button>Parcourir </button></div>
-            <div><button>Supprimer</button></div>
-            <div><button>Generer</button></div>
-        </div> #}
-
+    <input type="file" name="img" onchange="loadFile(event)">
+    {# <input type="reset" id="myReset" value="Reset form"> #}
+    <input type="submit" name="submit" value="Générer">
     </div>
+
+    {# <img name="current_img" class="" id="output_img"/> #}
+    <form class="col m6 s12 offset-m1" method="POST" action="" enctype="multipart/form-data">
+        <input type="text" name="pseudo" placeholder="Pseudo">
+        <input type="text" name="textTop" placeholder="Texte supérieur">
+        <input type="text" name="textBot" placeholder="Texte inférieur">
+        <select id="browsers">
+            <option value="Times_new_roman" selected>Times new roman</option> 
+            <option value="Myriad">Myriad</option>
+            <option value="Roboto">Roboto</option>
+        </select>
+
+        <select>
+            <option value="14px">14 pixels</option>
+            <option value="16px">16 pixels</option>
+            <option value="18px">18 pixels</option>
+        </select>
+    </form>
+
+    <div class="row">
+        <h3 class="col s12 borderBot lh2 p0">Les memes récents</h3>
+
+        {% for memes in meme %}
+            <div class="col s12 m2 l2">
+                <p>{{ memes.mem_pseudo }}</p>
+                <p>{{ memes.mem_image }}</p>
+                <p>Crée le : {{ memes.mem_createdAt }}</p>
+            </div>
+        {% endfor %} 
+    </div>
+
 </section>
 {% endblock %}
