@@ -22,6 +22,7 @@
 .bgWhite {background-color: rgb(255, 255, 255);}
 .bgGrey {background-color: rgb(200, 200, 200);}
 .bgBlack {background-color: rgb(50, 50, 50);}
+.black{color: #010101;}
 
 
 /* FONT */
@@ -32,6 +33,7 @@
 
 .cinzel {font-family: 'Cinzel', serif;}
 .oswald {font-family: 'Oswald', sans-serif;}
+.lh2{line-height: 2;}
 .lh2p5em {line-height: 2.5em;}
 .lh2em {line-height: 2em;}
 .lh1p5em {line-height: 1.5em;}
@@ -97,6 +99,7 @@
 .pt2prc {padding-top: 2%;}
 .pt1p5prc {padding-top: 1.5%;}
 
+.p0{padding: 0px !important;}
 .pl5prc {padding-left: 5%;}
 .pl3prc {padding-left: 3%;}
 .pl2prc {padding-left: 2%;}
@@ -148,14 +151,21 @@
 /* BORDER + SEPARATOR */
 
 .br10px {border-radius: 10px;}
-.borderLeft{border-left: 5px solid white}
+.borderLeft{border-left: 5px solid white;}
 .bordure {border: 1px solid rgb(255, 255, 255);}
+.borderBot{border-bottom: 2px solid #0f0f0f;}
 
 /*---------------->> CLASSES SPECIFIQUES <<----------------*/
 
 .sidenav li>a {color: white;}
 
 .row {margin-bottom:0px !important;}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #010101;
+    opacity: 1; /* Firefox */}
+:-ms-input-placeholder{color: #010101;}/* Internet Explorer 10-11 */
+::-ms-input-placeholder{color: #010101;}/* Microsoft Edge */
+
 
 /*---------------->> RESPONSIVE <<----------------*/
 
