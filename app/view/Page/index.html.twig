@@ -13,19 +13,21 @@
     <div class="col m1 s1"></div>
     <div class="col m4 s10 h30vh  bgWhite"></div>
 
-    <form>
-        <p>Pseudo <br> </p>    <input type="text" name="pseudo">
-        <p>Ajouter du texte sur l'image <br> </p>    <input type="text" name="pseudo">
-        <p>Selectionner une police d'écriture <br> </p>      <input list="browsers" name="browser">
+    <img name="current_img" class="" id="output_img"/>
+    <form method="POST" action="" enctype="multipart/form-data">
+        
+        <input type="file" name="img" onchange="loadFile(event)">
+        <input type="submit" name="submit" value="Générer">
+        <p>Pseudo</p><input type="text" name="pseudo">
+        <p>Ajouter du texte sur l'image</p> <input type="text" name="pseudo">
+        <p>Selectionner une police d'écriture</p><input list="browsers" name="browser">
         <datalist id="browsers">
           <option value="Times new roman">
           <option value="Myriad">
           <option value="Roboto">
         </datalist>
     </form>
-
-
-
+    
 {#     {% for memes in meme %}
         <div class="">
             <p>Id : {{ memes.mem_id }}</p>
