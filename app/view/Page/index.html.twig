@@ -10,15 +10,13 @@
     <div class="h10vh"></div>
 
 <section class="container row h70vh">
-    <div class="col m4 s10 h30vh bgWhite">
     
-    <input type="file" name="img" onchange="loadFile(event)">
-    {# <input type="reset" id="myReset" value="Reset form"> #}
-    <input type="submit" name="submit" value="Générer">
-    </div>
-
-    {# <img name="current_img" class="" id="output_img"/> #}
+    <img class="col m4 s10 h30vh bgWhite" name="output_img" class="" id="output_img"/>
     <form class="col m6 s12 offset-m1" method="POST" action="" enctype="multipart/form-data">
+        
+        <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+        <input type="file" name="img" id="file-input">
+        <input type="submit" name="submit" value="Générer">
         <input type="text" name="pseudo" placeholder="Pseudo">
         <input type="text" name="textTop" placeholder="Texte supérieur">
         <input type="text" name="textBot" placeholder="Texte inférieur">

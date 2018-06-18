@@ -11,6 +11,14 @@ Class Meme extends Model{
         return $stmt->fetchAll();
     }
 
+    public static function insertImg() {
+        $db = Database::getInstance();
+       /*  $stmt = $db->prepare('INSERT INTO `meme`(mem_pseudo, mem_image, mem_createdAt) VALUES ( '$_POST['pseudo']' , '$_POST['JECPAKOIMAITRE']' , 'NOW()') '));
+        */ $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public static function displayGalleryOfMeme() {
         $db = Database::getInstance();
         $sql = 'SELECT * FROM `meme` ORDER BY mem_createdAt ASC;';
