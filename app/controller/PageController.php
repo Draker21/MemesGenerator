@@ -6,10 +6,9 @@ class PageController extends Controller {
         //Check les erreurs lors de l'upload
         $msg = array(); //Créer un tableau pour les messages d'erreurs
         $nb_error = 0;
-        
         if(!empty($_FILES)){
-            if(isset($_FILES['img']['error'])){
-                switch($_FILES['img']['error']){ //ref : http://php.net/manual/fr/features.file-upload.errors.php
+            if(isset($_FILES['imgUpload']['error'])){
+                switch($_FILES['imgUpload']['error']){ //ref : http://php.net/manual/fr/features.file-upload.errors.php
                     case 1:
                         $msg['msg'] = "Votre fichier ne doit pas dépasser 12Mo";
                         $msg['type'] = "error";
@@ -32,63 +31,58 @@ class PageController extends Controller {
                         break;
                 }
             }
-
-
-            if($nb_error = 0){ //Si aucune erreur 
-                /* header("Content-type: image/jpeg"); //Définit une image/jpeg dans l'en-tête 
-                header("Content-type: image/png"); //Définit une image/png dans l'en-tête 
-                header("Content-type: image/gif"); //Définit une image/gif dans l'en-tête */
+            if($nb_error == 0){ //Si aucune erreur 
                 $ext = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'gif', 'GIF']; // Création d'une liste blanche des extensions autorisées
-                $fichier_upload = $_FILES['file-input'];
-               
-                if(in_array($ext, pathinfo($fichier_upload['name'],PATHINFO_EXTENSION))){ //Rennome l'img
-                    $imgName = 'mg_'.md5($fichier_upload).microtime().'.'.$ext;
+                $imgExt = substr($_FILES['imgUpload']['name'], strrpos($_FILES['imgUpload']['name'], '.') + 1);
 
-                    $tmpName = $_FILES["img"]["tmp_name"]; //Chemin temporaire de l'image
-                    $dir = (ROOT.'\app\assets\img_generated/' . $imgName); // Envoie l'image
+                if(in_array($imgExt, $ext)){ //Renomme l'img
+                $imgExt = substr($_FILES['imgUpload']['name'], strrpos($_FILES['imgUpload']['name'], '.') + 1);
+                    $imgName = 'mg_'.substr(md5($_FILES['imgUpload']['name']), 0, 5).microtime().'.'.$imgExt;
 
+                    $tmpName = $_FILES["imgUpload"]["tmp_name"]; //Chemin temporaire de l'image
+                    $dir = ROOT . '\app\assets\img_generated/' . $imgName; // Envoie l'image
+                
                     //Tableau des extensions
                     $arrayJpg = array('jpg', 'JPG', 'jpeg', 'JPEG');
                     $arrayPng = array('png', 'PNG');
                     $arrayGif = array('gif', 'GIF');
-
-                        if(in_array($ext,$arrayJpg)){
+                        if(in_array($imgExt,$arrayJpg)){
                             $im = imagecreatefromjpeg($tmpName);
-                        }elseif(in_array($ext,$arrayPng)){
+                        }elseif(in_array($imgExt,$arrayPng)){
                             $im = imagecreatefrompng($tmpName);
-                        }elseif(in_array($ext,$arrayGif)){
+                           
+                        }elseif(in_array($imgExt,$arrayGif)){
                             $im = imagecreatefromgif($tmpName);
+                        
                         } else {
                             $msg['msg'] = "Format incorrect. Veuillez choisir une image PNG, JPG ou GIF.";
                             $msg['type'] = "error";
                         }
+                        print_r($im);
 
-                    }
-                
-                
                     if(isset($_POST['submit'])){
-                        if(in_array($ext, $array_jpg)){
+                        echo 'Entrée';
+                        if(in_array($imgExt, $arrayJpg)){
                             imagejpeg($im,$dir);
-                            
-                        } elseif(in_array($ext, $array_gif)){
-                            imagegif($im,$dir);
-                           
-                        } elseif(in_array($ext, $array_png)){
+                        } elseif(in_array($imgExt, $arrayPng)){
                             imagepng($im,$dir);
-                           
-                        } else { 
+                            echo "LOL 2";
+                        } elseif(in_array($imgExt, $arrayGif)){
+                            imagegif($im,$dir);
+                        } else {
                             $msg['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
                             $msg['type'] = "error";
                         }  
                     }
+
                     imagedestroy($im);
                     $msg['msg'] = "Votre image a bien été upload.";
                     $msg['type'] = 'success';
-                } else {
-                $msg['msg'] = 'Extension de fichier non pris en compte.';
-                $msg['type'] = 'error';
                 }
             }
+        } 
+
+
         $limit = $this->route['params']["limit"];
         $recentMeme = Meme::displayLastGeneratedMeme($limit);
 
