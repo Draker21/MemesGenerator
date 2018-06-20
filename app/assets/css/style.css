@@ -26,6 +26,10 @@
 
 
 /* FONT */
+
+.fs14{font-size: 14px;}
+.fs16{font-size: 16px;}
+.fs18{font-size: 18px;}
 .fs20{font-size: 20px;}
 .fs50{font-size: 50px;}
 .fs100{font-size: 100px;}
@@ -152,7 +156,7 @@
 
 .br10px {border-radius: 10px;}
 .borderLeft{border-left: 5px solid white;}
-.bordure {border: 1px solid rgb(255, 255, 255);}
+.bordure {border: 1px solid;}
 .borderBot{border-bottom: 2px solid #0f0f0f;}
 
 /*---------------->> CLASSES SPECIFIQUES <<----------------*/

@@ -89,7 +89,6 @@ class PageController extends Controller {
                 $msg['type'] = 'error';
                 }
             }
-        
         $limit = $this->route['params']["limit"];
         $recentMeme = Meme::displayLastGeneratedMeme($limit);
 

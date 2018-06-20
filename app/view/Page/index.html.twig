@@ -10,12 +10,13 @@
     <div class="h10vh"></div>
 
 <section class="container row h70vh">
-    
-    <img class="col m4 s10 h30vh bgWhite" name="output_img" class="" id="output_img"/>
+
+        <img class="col m4 s10 h30vh bgWhite p0 bordure" name="output_img" class="" id="output_img"/>
+   
     <form class="col m6 s12 offset-m1" method="POST" action="" enctype="multipart/form-data">
         
         <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
-        <input type="file" name="img" id="file-input">
+        <input type="file" name="img" id="file-input" onchange="loadFile(event)">
         <input type="submit" name="submit" value="Générer">
         <input type="text" name="pseudo" placeholder="Pseudo">
         <input type="text" name="textTop" placeholder="Texte supérieur">
@@ -30,6 +31,7 @@
             <option value="14px">14 pixels</option>
             <option value="16px">16 pixels</option>
             <option value="18px">18 pixels</option>
+            <option value="20px">20 pixels</option>
         </select>
     </form>
 
